@@ -1,0 +1,16 @@
+{
+  "name": "ggp_end",
+  "version": "1.0.0",
+  "description": "created by framework as eggjs",
+  "main": "index.js",
+  "dependencies": {
+    "egg": "^2.23.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "egg-bin dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

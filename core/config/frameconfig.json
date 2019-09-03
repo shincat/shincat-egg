@@ -1,0 +1,5 @@
+{
+    "controller":"app/controllers",
+    "config":"app/config",
+    "services":"app/services"
+}

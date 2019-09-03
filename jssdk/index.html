@@ -1,0 +1,145 @@
+<html>
+
+<head><title>JSSDK</title>
+<meta charset="utf-8">
+<meta name='viewport' content='width=640,user-scalable=no'>
+<link rel="shortcut icon" href="//www.suning.com/favicon.ico" type="image/x-icon">
+<script src='http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.3.0'></script>
+<script src='js/jquery.js'></script>
+</head>
+
+<body onload="init()">
+<div class='btn' onclick='share()'>
+    苏宁分享
+</div>
+
+<div class='txt'>
+    <textarea style="display:none;"></textarea>
+</div>
+<style>
+.code{
+    width:100%;
+    height:auto;
+    background:#EEEEEE;
+    padding-left:30px;
+    padding-top:20px;
+}
+body{
+    width:100%;
+    height:auto
+}
+*{
+    margin:0 0;
+    font-family:arial
+}
+.btn{
+    display:block;
+    width:90%;
+    margin:10px auto;
+    height:45px;
+    text-align:center;
+    background: #eb3800;
+    color:#ffffff;
+    font-size:26px;
+    drop-shadow:0 0 0 0; 
+    border:2px solid;
+    border-radius:10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.txt{
+    width:90%;
+    margin:10px auto;
+    height:1000px;
+}
+#textarea{
+    width:100%;
+    height:600px;
+    border-width:0;
+     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+</style>
+<script type="text/javascript" src="snshare.1_0_0.js"></script></body>
+<script>
+   
+   
+    function init(){
+        //alert('init');
+        initEditor();
+        try{
+
+            var shareapp=SNSHARE.init("1").setMiniProgramConfig({
+                sharelink:'http://www.suning.com'
+            });
+            if(VConsole)
+            {
+                var vConsole = new VConsole();
+            }
+            
+        }
+        catch(e)
+        {
+            console.log(e);
+        }
+    }
+    function initEditor(){
+     
+    }
+        //console.log("SHAREAPP:",shareapp);
+    
+    var str="苏宁游戏平台分享log";
+    /*
+    var log=console.log;
+    //获得log 堆栈
+    var getStackTrace = function () {
+        var obj = {};
+        Error.captureStackTrace(obj, getStackTrace);
+        return obj.stack;
+    };
+    console.log=function(...params){
+        log.call(console,...arguments);
+            for(var i=0;i<params.length;i++)
+            {
+                if(params[i] instanceof Object)
+                {
+                    params[i]=JSON.stringify(params[i]);
+                }
+                str+= "\n\n"+ params[i];
+            }
+            document.getElementById('textarea').innerText=str;
+            return;
+        try{
+            
+            var stack = getStackTrace() || ""
+            var matchResult = stack.match(/\(.*?\)/g) || []
+            var line = matchResult[1] || ""
+            for (var i in arguments) {
+        
+                if (typeof arguments[i] == 'object') {
+                    arguments[i] = JSON.stringify(arguments[i])
+                }
+                arguments[i] += '\nfrom\n' + line.replace("(", "").replace(")", "")
+            }
+            log.call(console,...arguments);
+            for(var i=0;i<params.length;i++)
+            {
+                if(params[i] instanceof Object)
+                {
+                    params[i]=JSON.stringify(params[i]);
+                }
+                str+= "\n\n"+ params[i];
+            }
+            document.getElementById('textarea').innerText=str;
+        }
+        catch(e)
+        {
+            log.call(console,...params)
+        }
+       
+    }*/
+    function share(){
+        SNSHARE.share({
+            sharelink:'http://www.suning.com'
+        });
+    }
+</script>
+</html>
