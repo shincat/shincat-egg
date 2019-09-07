@@ -16,13 +16,13 @@ module.exports=()=>{
         },
         //跨域配置
         cors:{
-            allowdomain:['shin-prexg.cnsuning.com:9000','cnsuning.com','suning.com']
+            allowdomain:"*"
         },
         middlewares:['cors'],
         
         //本地server的相关信息
         webserver:{
-            host:"shin-prexg.cnsuning.com",
+            host:"127.0.0.1",
             port:3000
         }
 
